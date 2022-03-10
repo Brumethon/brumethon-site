@@ -10,16 +10,16 @@ export default class SecurityRepository {
         this.storageService = storage;
     }
 
-    public login(user: User): void {
-        let loginUrl: string = this.baseUrl + '/login'
+    public login(email: string, password: string): void {
+        let endpoint: string = this.baseUrl + '/login'
 
-        axios.post(loginUrl, {
+        axios.post(endpoint, {
             headers: {
                 'content-type': 'application/json'
             },
             body: {
-                username: user.username,
-                password: user.password
+                username: email,
+                password: password
             }
         }).then((response) => {
             let token = response.data;
@@ -29,5 +29,9 @@ export default class SecurityRepository {
         }).catch((reason => {
             console.error(reason);
         }))
+    }
+
+    public registerUser(user: User): void {
+
     }
 }
