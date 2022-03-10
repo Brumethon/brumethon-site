@@ -30,13 +30,14 @@ export class LoginComponent implements OnInit {
   initForm(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      pass: ['', [Validators.required]]
     })
   }
 
   async onSubmitForm() {
-    const {email, password} = this.loginForm.value;
+    const {email, pass} = this.loginForm.value;
 
+    console.log("Submit");
     /// TODO : required services et router
   }
 
