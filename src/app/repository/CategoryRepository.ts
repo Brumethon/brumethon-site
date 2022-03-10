@@ -1,12 +1,16 @@
 import {Category} from "../model/Models";
 import axios from "axios";
+import {Injectable} from "@angular/core";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class CategoryRepository {
   private baseUrl: string = "TODO";
   private token: string;
 
-  constructor(token: string) {
-    this.token = token
+  constructor(/*token: string*/) {
+    this.token = "token";
   }
 
   public addCategory(category: Category): void

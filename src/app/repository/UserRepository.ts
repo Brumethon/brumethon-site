@@ -1,6 +1,10 @@
 import axios from "axios";
 import {User} from "../model/Models";
+import {Injectable} from "@angular/core";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class UserRepository {
     private baseUrl: string = "TODO";
     private token: string;
