@@ -12,12 +12,12 @@ export class CategoryRepository extends DefaultRepository{
     super()
   }
 
-  public addCategory(category: Category): void
+  public addCategory(name: string): void
   {
     let endpoint: string = `${this.baseUrl}/categories`
     axios.post(
       endpoint,
-      {category},
+      {name},
       {
         headers: {
           'Authorization': `Basic ${this.token}`
