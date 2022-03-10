@@ -1,12 +1,12 @@
 import axios from "axios";
 import {User} from "../model/Models";
+import {DefaultRepository} from "./DefaultRepository";
 
-export class UserRepository {
+export class UserRepository extends DefaultRepository{
     private baseUrl: string = "TODO";
-    private token: string;
 
-    constructor(token: string) {
-      this.token = token;
+    constructor() {
+      super()
     }
 
     public getUser(): Promise<User> {

@@ -1,12 +1,13 @@
 import {Category} from "../model/Models";
 import axios from "axios";
+import {DefaultRepository} from "./DefaultRepository";
 
-export class CategoryRepository {
+export class CategoryRepository extends DefaultRepository{
   private baseUrl: string = "TODO";
-  private token: string;
 
-  constructor(token: string) {
-    this.token = token
+
+  constructor() {
+    super()
   }
 
   public addCategory(category: Category): void
