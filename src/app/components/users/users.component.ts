@@ -9,10 +9,10 @@ import {User} from "../../model/Models";
 export class UsersComponent implements OnInit {
 
   users: User[] = [
-    {id: "1", mail: "paul@gmail.com", username: "Paul", password: "", address: "" },
-    {id: "2", mail: "natha@gmail.com", username: "Natha", password: "", address: "" },
-    {id: "3", mail: "clement@gmail.com", username: "Clément", password: "", address: "" },
-    {id: "4", mail: "ame@gmail.com", username: "Amé", password: "", address: "" },
+    {id: "1", mail: "paul@gmail.com", firstname: "Paul", lastname: "Paul", password: "", address: "", rate: 0 },
+    {id: "2", mail: "natha@gmail.com", firstname: "Natha", lastname: "TO",password: "", address: "", rate: 100 },
+    {id: "3", mail: "clement@gmail.com", firstname: "Clément",lastname: "Paul", password: "", address: "", rate: 0 },
+    {id: "4", mail: "ame@gmail.com", firstname: "Amé", lastname: "Paul",password: "", address: "", rate: 0 },
   ]
 
   constructor() { }
