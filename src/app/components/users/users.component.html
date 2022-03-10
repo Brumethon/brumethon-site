@@ -24,10 +24,10 @@
           <td>{{ user.mail }}</td>
           <td>{{ user.rate }}</td>
           <td *ngIf="user.isBan">
-            <button class="btn btn-info">Réhabiliter</button>
+            <button class="btn btn-info" (click)="restoreUser(user.id)">Réhabiliter</button>
           </td>
           <td *ngIf="!user.isBan">
-            <button class="btn btn-danger">Bannir</button>
+            <button class="btn btn-danger" (click)="banUser(user.id)">Bannir</button>
           </td>
         </tr>
       </tbody>
