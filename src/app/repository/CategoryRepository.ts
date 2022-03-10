@@ -50,6 +50,19 @@ export class CategoryRepository {
     )
   }
 
+  public deleteCategory(category: Category): void {
+    let endpoint: string = `${this.baseUrl}/categories/${category.id}`
+
+    axios.delete(
+      endpoint,
+      {
+        headers: {
+          'Authorization': `Basic ${this.token}`
+        }
+      }
+    )
+  }
+
 
 
 }
