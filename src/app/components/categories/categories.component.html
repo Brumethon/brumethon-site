@@ -19,7 +19,14 @@
               <th class="col-1" scope="row">{{category.id}}</th>
               <td class="col-10">{{category.name}}</td>
               <td>
-                <button class="btn btn-link"><span aria-hidden="true"><i class="bi bi-x-circle"></i></span></button>
+                <button
+                  class="btn btn-link"
+                  (click)="remove(category)"
+                >
+                  <span aria-hidden="true">
+                    <i class="bi bi-x-circle"></i>
+                  </span>
+                </button>
               </td>
             </tr>
             </tbody>
