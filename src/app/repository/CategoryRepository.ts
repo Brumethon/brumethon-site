@@ -1,10 +1,12 @@
 import {Category} from "../model/Models";
 import axios from "axios";
 import {DefaultRepository} from "./DefaultRepository";
+import {Injectable} from "@angular/core";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class CategoryRepository extends DefaultRepository{
-  private baseUrl: string = "TODO";
-
 
   constructor() {
     super()
