@@ -24,12 +24,31 @@ export default class ReferentRepository {
 
     public getReferentRequests(): Promise<ReferentRequest>
     {
-
+      let endpoint: string = this.baseUrl + "/admin/referent/request"
+        return axios.get(
+          endpoint,
+          {
+            headers: {
+              // Token ?
+            }
+          }
+        )
     }
 
-    public handleReferentRequest(): Promise<>
+    public handleReferentRequest(referentRequest: ReferentRequest): void
     {
+      let endpoint: string = this.baseUrl + "/admin/referent/request"
+      axios.post(
+        endpoint,
+        {
+          headers: {
+            // Token ?
+          },
+          body: {
 
+          }
+        }
+      )
     }
 
 
