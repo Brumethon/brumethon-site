@@ -17,9 +17,9 @@ import {CategoryRepository} from "./repository/CategoryRepository";
     CategoriesComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule
+      BrowserModule,
+      AppRoutingModule,
+      ReactiveFormsModule
     ],
   providers: [
     CategoryRepository
