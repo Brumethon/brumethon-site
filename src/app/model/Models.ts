@@ -1,8 +1,9 @@
 export interface User {
-    mail: string;
-    username: string;
-    password: string;
-    address: string;
+  id: string;
+  mail: string;
+  username: string;
+  password: string;
+  address: string;
 }
 
 export interface Category {
