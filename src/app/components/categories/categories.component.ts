@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Category} from "../../model/Models";
+import {CategoryRepository} from "../../repository/CategoryRepository";
 
 @Component({
   selector: 'app-categories',
@@ -8,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class CategoriesComponent implements OnInit {
+  categories: Array<Category> = [];
 
-  constructor() { }
+  constructor(
+    private categoryRepository: CategoryRepository
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    //this.categories = await this.categoryRepository.listCategory()
+    this.categories = [
+      { id: 1, name:"Les pneus" },
+      { id: 2, name:"Les pneus" },
+      { id: 3, name:"Les pneus" },
+      { id: 4, name:"Les pneus" },
+    ]
   }
 
 }

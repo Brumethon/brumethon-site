@@ -1,9 +1,12 @@
 import axios from "axios";
 import {User} from "../model/Models";
 import {DefaultRepository} from "./DefaultRepository";
+import {Injectable} from "@angular/core";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class UserRepository extends DefaultRepository{
-    private baseUrl: string = "TODO";
 
     constructor() {
       super()

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  token: ""
+  API_URL: "TODO",
+  ADMIN_TOKEN: "letoken"
 };
 
 /*

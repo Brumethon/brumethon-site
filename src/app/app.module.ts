@@ -7,6 +7,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { UsersComponent } from './components/users/users.component';
 import { NavComponent } from './components/nav/nav.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import {CategoryRepository} from "./repository/CategoryRepository";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
         AppRoutingModule,
         ReactiveFormsModule
     ],
-  providers: [],
+  providers: [
+    CategoryRepository
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
