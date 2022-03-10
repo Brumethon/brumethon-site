@@ -8,6 +8,7 @@ import { UsersComponent } from './components/users/users.component';
 import { NavComponent } from './components/nav/nav.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import {CategoryRepository} from "./repository/CategoryRepository";
+import {UserRepository} from "./repository/UserRepository";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {CategoryRepository} from "./repository/CategoryRepository";
       ReactiveFormsModule
     ],
   providers: [
-    CategoryRepository
+    CategoryRepository,
+    UserRepository
   ],
   bootstrap: [AppComponent]
 })

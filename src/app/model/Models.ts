@@ -6,6 +6,7 @@ export interface User {
     password: string;
     address: string;
     rate: number;
+    isBan: boolean;
 }
 
 export interface Category {
