@@ -1,21 +1,14 @@
 export interface User {
+    id: number;
     mail: string;
-    username: string;
+    firstname: string;
+    lastname: string;
     password: string;
     address: string;
+    rate: number;
 }
 
 export interface Category {
+    id: number;
     name: string;
-}
-
-export interface Referent {
-    userId: string;
-    categories: Array<Category>;
-}
-
-export interface ReferentRequest {
-    user: User;
-    status: string;
-    date: Date;
 }
