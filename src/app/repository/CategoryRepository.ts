@@ -39,20 +39,6 @@ export class CategoryRepository extends DefaultRepository{
     )
   }
 
-  public renameCategory(category: Category): void {
-    let endpoint: string = `${this.baseUrl}/categories/${category.id}`
-
-    axios.put(
-      endpoint,
-      {category},
-      {
-        headers: {
-          'Authorization': `Basic ${this.token}`
-        }
-      }
-    )
-  }
-
   public deleteCategory(category: Category): void {
     let endpoint: string = `${this.baseUrl}/categories/${category.id}`
 

@@ -16,15 +16,10 @@
               *ngFor="let category of this.categories"
               class="alert" role="alert"
             >
-              <th scope="row">{{category.id}}</th>
-              <td>{{category.name}}</td>
+              <th class="col-1" scope="row">{{category.id}}</th>
+              <td class="col-10">{{category.name}}</td>
               <td>
-                <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true"><i class="bi bi-x-circle"></i></span>
-                </a>
-                <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true"><i class="bi bi-pencil"></i></span>
-                </a>
+                <button class="btn btn-link"><span aria-hidden="true"><i class="bi bi-x-circle"></i></span></button>
               </td>
             </tr>
             </tbody>
