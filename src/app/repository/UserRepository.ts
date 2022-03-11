@@ -17,7 +17,7 @@ export class UserRepository extends DefaultRepository{
 
         return axios.get(endpoint, {
             headers: {
-              'Authorization': `Basic ${this.token}`
+              'uuid': `${this.token}`
             }
         });
     }
@@ -28,9 +28,11 @@ export class UserRepository extends DefaultRepository{
 
       return axios.get(endpoint, {
         headers: {
-          'Authorization': `Basic ${this.token}`
+          'Access-Control-Allow-Origin': '*'
         }
-      });
+      }).then((response) => {
+        return response.data
+      })
     }
 
     public banUser(userId: string): void
@@ -41,7 +43,7 @@ export class UserRepository extends DefaultRepository{
         endpoint,
         {
           headers: {
-            'Authorization': `Basic ${this.token}`
+            'uuid': `${this.token}`
           }
         }
       ).catch((reason) => {
@@ -60,7 +62,7 @@ export class UserRepository extends DefaultRepository{
         endpoint,
         {
           headers: {
-            'Authorization': `Basic ${this.token}`
+            'uuid': `${this.token}`
           }
         }
       ).catch((reason) => {

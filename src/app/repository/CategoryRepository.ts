@@ -17,10 +17,12 @@ export class CategoryRepository extends DefaultRepository{
     let endpoint: string = `${this.baseUrl}/categories`
     axios.post(
       endpoint,
-      {name},
+      {
+        "name": name
+      },
       {
         headers: {
-          'Authorization': `Basic ${this.token}`
+          'uuid': `${this.token}`
         },
       }
     )
@@ -33,7 +35,7 @@ export class CategoryRepository extends DefaultRepository{
       endpoint,
       {
         headers: {
-          'Authorization': `Basic ${this.token}`
+          'uuid': `${this.token}`
         }
       }
     )
@@ -46,7 +48,7 @@ export class CategoryRepository extends DefaultRepository{
       endpoint,
       {
         headers: {
-          'Authorization': `Basic ${this.token}`
+          'uuid': `${this.token}`
         }
       }
     )

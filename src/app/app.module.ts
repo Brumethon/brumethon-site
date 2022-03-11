@@ -30,4 +30,5 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
