@@ -17,13 +17,13 @@ export class UsersComponent implements OnInit {
     this.users = await this.userRepository.getUsers();
   }
 
-  async banUser(userId: string): Promise<void> {
+  async banUser(email: string): Promise<void> {
     //Pas encore implémenté
-    //await this.userRepository.banUser(userId);
+    await this.userRepository.banUser(email);
   }
 
-  async restoreUser(userId: string): Promise<void> {
+  async restoreUser(email: string): Promise<void> {
     // Pas encore implémenté
-    //await this.userRepository.restore(userId);
+    // await this.userRepository.restore(email);
   }
 }

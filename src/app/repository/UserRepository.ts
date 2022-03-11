@@ -12,8 +12,8 @@ export class UserRepository extends DefaultRepository{
       super()
     }
 
-    public getUser(): Promise<User> {
-        let endpoint = this.baseUrl + "/user/" + this.token
+    public getUser(userId: string): Promise<User> {
+        let endpoint = `${this.baseUrl}/users/${userId}`
 
         return axios.get(endpoint, {
             headers: {
@@ -24,20 +24,29 @@ export class UserRepository extends DefaultRepository{
 
     public getUsers(): Promise<Array<User>>
     {
-      let endpoint = this.baseUrl + "/users/"
+      let endpoint = `${this.baseUrl}/users/`
 
       return axios.get(endpoint, {
         headers: {
           'Access-Control-Allow-Origin': '*'
         }
       }).then((response) => {
-        return response.data
+        let users: Array<User> = response.data;
+
+        users.forEach((user: User) => {
+          user.isBanned = user.roles.findIndex((role) => {
+            return role.name == "banned"
+          }) != -1;
+        })
+
+        return users
       })
     }
 
-    public banUser(userId: string): void
+    public banUser(email: string): void
     {
-      let endpoint: string = `${this.baseUrl}/user/${userId}/ban`
+      let banRoleId = 1; // TODO à améliorer
+      let endpoint: string = `${this.baseUrl}/users/${email}/roles/${banRoleId}`
 
       axios.patch(
         endpoint,
@@ -54,9 +63,10 @@ export class UserRepository extends DefaultRepository{
 
     }
 
-    public restore(userId: string): void
+    public restore(email: string): void
     {
-      let endpoint: string = `${this.baseUrl}/user/${userId}/restore`
+      let banRoleId = 1; // TODO à améliorer
+      let endpoint: string = `${this.baseUrl}/users/${email}/roles/${banRoleId}`
 
       axios.patch(
         endpoint,

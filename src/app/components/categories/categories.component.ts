@@ -27,11 +27,11 @@ export class CategoriesComponent implements OnInit {
   }
 
   async remove(category: Category): Promise<void> {
-    await this.categoryRepository.deleteCategory(category);
-    /*this.categories.splice(
+    // await this.categoryRepository.deleteCategory(category);
+    this.categories.splice(
       this.categories.findIndex(item => item.id === category.id),
       1
-    )*/
+    )
   }
 
 }

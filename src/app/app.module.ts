@@ -10,6 +10,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CategoryRepository } from "./repository/CategoryRepository";
 import { UserRepository } from "./repository/UserRepository";
 import { CreateCategoryComponent } from './components/create-category/create-category.component';
+import { CreateScooterModelComponent } from './components/create-scooter-model/create-scooter-model.component';
+import { ScooterModelsComponent } from './components/scooter-models/scooter-models.component';
+import {ScooterRepository} from "./repository/ScooterRepository";
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
     UsersComponent,
     NavComponent,
     CategoriesComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    CreateScooterModelComponent,
+    ScooterModelsComponent
   ],
     imports: [
       BrowserModule,
@@ -26,7 +31,8 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
     ],
   providers: [
     CategoryRepository,
-    UserRepository
+    UserRepository,
+    ScooterRepository
   ],
   bootstrap: [AppComponent]
 })

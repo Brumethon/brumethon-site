@@ -6,10 +6,21 @@ export interface User {
     password: string;
     address: string;
     rate: number;
-    isBan: boolean;
+    isBanned: boolean;
+    roles: Array<Role>;
 }
 
 export interface Category {
+    id: number;
+    name: string;
+}
+
+export interface Role {
+    id: number;
+    name: string;
+}
+
+export interface ScooterModel {
     id: number;
     name: string;
 }
