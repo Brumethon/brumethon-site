@@ -7,7 +7,7 @@ import {Injectable} from "@angular/core";
   providedIn: 'root'
 })
 export class UserRepository extends DefaultRepository{
-
+    private readonly banRoleId = 2;
     constructor() {
       super()
     }
@@ -43,12 +43,11 @@ export class UserRepository extends DefaultRepository{
       })
     }
 
-    public banUser(email: string): void
+    public banUser(user: User): void
     {
-      let banRoleId = 1; // TODO à améliorer
-      let endpoint: string = `${this.baseUrl}/users/${email}/roles/${banRoleId}`
+      let endpoint: string = `${this.baseUrl}/users/${user.email}/roles/${this.banRoleId}`
 
-      axios.patch(
+      axios.post(
         endpoint,
         {
           headers: {
@@ -59,16 +58,15 @@ export class UserRepository extends DefaultRepository{
         console.error(reason)
         //Afficher une erreur pour l'utilisateur
       })
-
+      user.isBanned = true;
 
     }
 
-    public restore(email: string): void
+    public restore(user: User): void
     {
-      let banRoleId = 1; // TODO à améliorer
-      let endpoint: string = `${this.baseUrl}/users/${email}/roles/${banRoleId}`
+      let endpoint: string = `${this.baseUrl}/users/${user.email}/roles/${this.banRoleId}`
 
-      axios.patch(
+      axios.delete(
         endpoint,
         {
           headers: {
@@ -79,6 +77,8 @@ export class UserRepository extends DefaultRepository{
         console.error(reason)
         //Afficher une erreur pour l'utilisateur
       })
+
+      user.isBanned = false;
     }
 
 }

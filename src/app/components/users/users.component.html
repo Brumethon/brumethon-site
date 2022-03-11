@@ -8,26 +8,22 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
           <th scope="col">Prénom</th>
           <th scope="col">Nom</th>
           <th scope="col">Email</th>
-          <th scope="col">Score</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
-          <th scope="row">{{ user.id }}</th>
           <td>{{ user.firstname }}</td>
           <td>{{ user.lastname }}</td>
-          <td>{{ user.mail }}</td>
-          <td>{{ user.rate }}</td>
+          <td>{{ user.email }}</td>
           <td *ngIf="user.isBanned">
-            <button class="btn btn-info" (click)="restoreUser(user.mail)">Réhabiliter</button>
+            <button class="btn btn-info" (click)="restoreUser(user)">Réhabiliter</button>
           </td>
           <td *ngIf="!user.isBanned">
-            <button class="btn btn-danger" (click)="banUser(user.mail)">Bannir</button>
+            <button class="btn btn-danger" (click)="banUser(user)">Bannir</button>
           </td>
         </tr>
       </tbody>
