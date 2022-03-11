@@ -30,7 +30,11 @@ export class CreateCategoryComponent implements OnInit {
   async onSubmitForm() {
     const {name} = this.activityForm.value;
     await this.categoryRepository.addCategory(name)
-    await this.router.navigate(['/categories']);
+    // await this.router.navigate(['/categories']);
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate(['/categories']);
+    });
+
   }
 
 }
