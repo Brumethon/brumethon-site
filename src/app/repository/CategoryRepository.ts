@@ -12,17 +12,18 @@ export class CategoryRepository extends DefaultRepository{
     super()
   }
 
-  public addCategory(name: string): void
+  public addCategory(categoryName: string): void
   {
     let endpoint: string = `${this.baseUrl}/categories`
     axios.post(
       endpoint,
       {
-        "name": name
+        "name": categoryName
       },
       {
         headers: {
-          'uuid': `${this.token}`
+          'uuid': `${this.token}`,
+          'Content-Type': 'application/json'
         },
       }
     )
@@ -38,7 +39,9 @@ export class CategoryRepository extends DefaultRepository{
           'uuid': `${this.token}`
         }
       }
-    )
+    ).then((response) => {
+      return response.data
+    })
   }
 
   public deleteCategory(category: Category): void {
